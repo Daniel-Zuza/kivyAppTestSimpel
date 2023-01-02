@@ -1,0 +1,36 @@
+
+<Seite3>
+    name: 'seite3'
+
+    MDFloatLayout:
+        id: box
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        MDRectangleFlatButton:
+            id: seiten_nav_knopf
+            text: 'Zur Seite 2'
+            pos_hint: {"center_x": 0.5, "center_y": 0.8}
+            text_color: 0, 0, 0, 1
+            on_release: root.seiteAufrufen(seiten_name='seite2')
+
+        MDRectangleFlatButton:
+            id: seiten_nav_knopf2
+            text: 'Zur Startsetie'
+            pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            text_color: 0, 0, 0, 1
+            on_release: root.seiteAufrufen(seiten_name='Startsetie')
+
+        MDRectangleFlatButton:
+            id: test_knopf
+            text: "test 3 knopf"
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            text_color: 0, 0, 0, 1
+            on_release:
+                root.knopfdruckCallback()
+
+        MDLabel:
+            id: test_label
+            text: "test 3 Label"
+            halign: 'center'
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}

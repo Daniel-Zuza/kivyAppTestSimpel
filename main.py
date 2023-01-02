@@ -1,24 +1,22 @@
 
-import random
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager
 
 class WindowManager(ScreenManager):
-    pass
-
-class Seite(Screen):
-    def __init__(self, **kwargs):
-        super(Seite, self).__init__(**kwargs)
-        self.app = MDApp.get_running_app()
-
-    def knopfdruckCallback(self):
-        self.ids.test_label.text = f"{random.randint(0, 100)}"
+    class WindowManager(ScreenManager):
+        pass
 
 class MyApp(MDApp):
 
     def build(self):
-        return Builder.load_file("design.kv")
+        self.window_manager = WindowManager()
+        self.designDateienLaden()
+        return Builder.load_file('Seitendefinitionen/startseite.kv')
+
+    def designDateienLaden(self):
+        Builder.load_file('Seitendefinitionen/seite2.kv')
+        Builder.load_file('Seitendefinitionen/seite3.kv')
 
 if __name__ == '__main__':
     MyApp().run()

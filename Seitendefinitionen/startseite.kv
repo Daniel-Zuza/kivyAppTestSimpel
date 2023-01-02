@@ -1,0 +1,47 @@
+
+#:import Startseite Seitendefinitionen.startseite.Startseite
+#:import Seite2 Seitendefinitionen.seite2.Seite2
+#:import Seite3 Seitendefinitionen.seite3.Seite3
+
+WindowManager:
+    Startseite:
+        id: startseite
+    Seite2:
+        id: seite2
+    Seite3:
+        id: seite3
+
+<Startseite>
+    name: 'startseite'
+
+    MDFloatLayout:
+        id: box
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        MDRectangleFlatButton:
+            id: seiten_nav_knopf
+            text: 'Zur Seite 2'
+            pos_hint: {"center_x": 0.5, "center_y": 0.8}
+            text_color: 0, 0, 0, 1
+            on_release: root.seiteAufrufen(seiten_name='seite2')
+
+        MDRectangleFlatButton:
+            id: seiten_nav_knopf2
+            text: 'Zur Seite 3'
+            pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            text_color: 0, 0, 0, 1
+            on_release: root.seiteAufrufen(seiten_name='seite3')
+
+        MDRectangleFlatButton:
+            id: test_knopf
+            text: "test knopf"
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            text_color: 0, 0, 0, 1
+            on_release: root.knopfdruckCallback()
+
+        MDLabel:
+            id: test_label
+            text: "test Label"
+            halign: 'center'
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
