@@ -3,6 +3,9 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 
+class test():
+    pass
+
 class WindowManager(ScreenManager):
     class WindowManager(ScreenManager):
         pass
